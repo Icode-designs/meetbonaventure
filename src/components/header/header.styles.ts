@@ -1,113 +1,94 @@
-import styled, { css } from "styled-components";
+"use client";
+import styled from "styled-components";
 
-export const StyledHeader = styled.header<{ $scrolled: boolean }>`
-  position: fixed;
-  top: 8px;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  width: 100%;
-  border-radius: ${({ $scrolled }) => ($scrolled ? "8px" : "0")};
-  margin: 0 auto;
+export const HeaderStyles = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
-  background-color: ${({ $scrolled }) =>
-    $scrolled ? undefined : "transparent"};
-  backdrop-filter: ${({ $scrolled }) => ($scrolled ? "blur(10px)" : "none")};
-  transition:
-    background-color 0.3s ease-in-out,
-    width 0.3s ease-in-out,
-    border-radius 0.3s ease-in-out;
-
-  border: 1px solid transparent;
-  ${({ $scrolled }) =>
-    $scrolled &&
-    css`
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))
-          padding-box,
-        linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.4),
-            rgba(255, 255, 255, 0.1),
-            rgba(255, 255, 255, 0.4)
-          )
-          border-box;
-    `}
-
-  @media (min-width: 768px) {
-    width: ${({ $scrolled }) => ($scrolled ? "70%" : "100%")};
-  }
+  padding: 24px 16px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--body-color);
 `;
 
-export const StyledHeaderContent = styled.div`
+export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  z-index: 1010;
   max-width: var(--max-width);
-  gap: 50px;
+`;
 
-  button {
-    border: none;
-    background: none;
-    svg {
-      font-size: 24px;
-      color: var(--col-100);
-    }
+export const Menubtn = styled.button`
+  svg {
+    font-size: 24px;
+    color: var(--col-100);
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
   }
 `;
 
-export const StyledNav = styled.nav<{ $isMenuOpen: boolean }>`
+export const NavStyles = styled.nav<{ $isOpen: boolean }>`
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-  transform: translateX(${({ $isMenuOpen }) => ($isMenuOpen ? "0" : "150%")});
-  transition: transform 0.5s ease-in-out;
-  background-color: var(--col-100);
-  padding: 40px 24px;
+  top: 88px;
+  right: ${({ $isOpen }) => ($isOpen ? "0" : "-100%")};
+  width: 100%;
+  height: calc(100vh - 88px);
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  transition: right 0.3s ease-in-out;
+  z-index: -1;
+
   ul {
-    list-style: none;
     display: grid;
     gap: 24px;
-    grid-template-columns: 1fr;
-    color: var(--col-000);
+    padding: 40px 24px;
+    justify-items: start;
+    align-content: center;
+    width: 80%;
+    z-index: 990;
+    height: 100%;
+    background-color: var(--body-color);
+    list-style: none;
+    color: var(--col-100);
+    font-size: 24px;
+    font-weight: 400;
 
-    li {
-      font-size: 28px;
-      text-align: center;
-      text-transform: capitalize;
-      font-weight: 600;
-
-      &:last-of-type {
-        background-color: var(--highlight);
-        border-radius: 8px;
-        padding: 16px 24px;
-        width: fit-content;
-        margin: 0 auto;
-        color: var(--col-100);
-      }
+    li:last-of-type {
+      margin-top: 24px;
     }
   }
 
   @media (min-width: 1024px) {
     position: static;
+    width: auto;
+    height: auto;
     background-color: transparent;
-    padding: 0;
-    width: fit-content;
-    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: none;
+    right: unset;
+    top: unset;
+
     ul {
       display: flex;
-      align-items: center;
       gap: 32px;
-      color: var(--col-100);
-      li {
-        font-size: 20px;
-        font-weight: 500;
+      padding: 0;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      z-index: 1010;
+      font-size: 18px;
+
+      li:last-of-type {
+        margin-top: unset;
       }
     }
   }

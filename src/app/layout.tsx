@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import { Istok_Web, Lobster_Two, Italianno } from "next/font/google";
-import Header from "@/components/header/header";
+import { Inter, Italianno } from "next/font/google";
 import { GlobalStyles } from "./global.style";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
-const istokWeb = Istok_Web({
-  variable: "--font-istok-web",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: "400",
 });
 const italianno = Italianno({
   variable: "--font-italianno",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const lobsterTwo = Lobster_Two({
-  variable: "--font-lobster-two",
   subsets: ["latin"],
   weight: "400",
 });
@@ -42,14 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${istokWeb.variable} ${lobsterTwo.variable} ${italianno.variable}`}
-      >
+      <body className={`${inter.variable}  ${italianno.variable}`}>
         <GlobalStyles />
-        <main>
-          <Header />
-          {children}
-        </main>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

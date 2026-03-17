@@ -4,10 +4,12 @@ export const GlobalStyles = createGlobalStyle`
 :root{
     --max-width: 1200px;
     --highlight: #057AFF;
-    --darkHighlight: #0067dd;
-    --body-color: #f1f1f1;
+    --darkHighlight: rgb(0, 103, 221);
+    --body-color: #111C21;
     --col-000: #000000;
     --col-100: #ffffff;
+    --col-200: #162228;
+    --grey: #94A3B8;
 }
 
 *, *::before, *::after {
@@ -18,8 +20,10 @@ export const GlobalStyles = createGlobalStyle`
 body{
     min-height: 100vh;
     font-size: 16px;
-    font-family: var(--font-istok-web);
+    font-family: var(--font-inter);
     background-color: var(--body-color);
+    color: var(--col-100);
+    scroll-behavior: smooth;
 }
 
 h1{
@@ -32,21 +36,36 @@ h1{
     background-clip: text;
     letter-spacing: 15%;
     line-height: auto;
+    text-transform: uppercase;
 }
 
 h2{
-    font-size: clamp(28px, 3vw, 36px);
-    font-family: var(--font-lobster-two);
+    font-size: clamp(28px, 2vw, 32px);
+    font-family: var(--font-inter);
+    text-transform: capitalize;
 }
 
 h3{
-    font-size: clamp(20px, 2vw, 28px);
+    font-size: clamp(20px, 1vw, 24px);
+    text-transform: capitalize;
 }
-`;
 
-export const StyledSection = styled.section<{ $bgColor?: "transparent" }>`
-  background-color: ${(props) =>
-    props.$bgColor === "transparent" ? "transparent" : "var(--col-000)"};
-  height: fit-content;
-  padding: 50px 16px;
+p{
+    color: var(--grey);
+    line-height: 22.8px;
+    letter-spacing: 0;
+    font-size: 14px;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    text-transform: capitalize;
+}
 `;

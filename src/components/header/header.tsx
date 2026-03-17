@@ -1,56 +1,68 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
+import {
+  HeaderContainer,
+  HeaderStyles,
+  Menubtn,
+  NavStyles,
+} from "./header.styles";
 import Logo from "../logo/logo";
-import { StyledHeader, StyledHeaderContent, StyledNav } from "./header.styles";
+import { FaBars } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
+import Link from "next/link";
+import Button, { LinkButton } from "../button/button";
 import useMediaQuery from "@/hooks/useMediaquery";
-import { IoMdClose } from "react-icons/io";
-import { FaBars } from "react-icons/fa";
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isdesktop = useMediaQuery("(min-width: 1024px)");
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  function toggleMenu() {
+  const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-  }
-
+  };
   return (
-    <StyledHeader $scrolled={scrolled}>
-      <StyledHeaderContent>
-        <Logo />{" "}
-        {!isdesktop && (
-          <button onClick={toggleMenu}>
-            {isMenuOpen ? <IoMdClose /> : <FaBars />}
-          </button>
-        )}
-        <StyledNav $isMenuOpen={isMenuOpen}>
+    <HeaderStyles>
+      <HeaderContainer>
+        <Logo />
+
+        <Menubtn onClick={toggleMenu}>
+          {isMenuOpen ? <IoClose /> : <FaBars />}
+        </Menubtn>
+
+        <NavStyles $isOpen={isMenuOpen}>
           <ul>
-            <li>projects</li>
-            <li>about me</li>
-            <li>blog</li>
-            <li>contact me!!</li>
+            <li>
+              <Link href="#work">work</Link>
+            </li>
+            <li>
+              <Link href="#expertise">expertise</Link>
+            </li>
+            <li>
+              <Link href="#process">process</Link>
+            </li>
+            <li>
+              <Link href="/about">about</Link>
+            </li>
+            <li>
+              <Link href="/blog">blog</Link>
+            </li>
+            {!isDesktop && (
+              <li>
+                <LinkButton href="/contact" variant="primary">
+                  Get in touch
+                </LinkButton>
+              </li>
+            )}
           </ul>
-        </StyledNav>
-      </StyledHeaderContent>
-    </StyledHeader>
+        </NavStyles>
+        {isDesktop && (
+          <LinkButton href="/contact" variant="primary">
+            Get in touch
+          </LinkButton>
+        )}
+      </HeaderContainer>
+    </HeaderStyles>
   );
 };
 
