@@ -3,10 +3,11 @@ import SectionWrapper from "../shared/sectionWrapper";
 import { CtaArticle, CtaStyles } from "./cta.styles";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { LinkButton } from "../button/button";
+import ContactForm from "./contactForm";
 
 const Cta = () => {
   return (
-    <SectionWrapper variant="primary">
+    <SectionWrapper variant="primary" id="contact">
       <CtaStyles>
         <CtaArticle>
           <span>
@@ -18,10 +19,9 @@ const Cta = () => {
             technical partner to build your product from scratch, I'm here to
             help.`}
           </p>
-          <LinkButton variant="primary" href="/contact">
-            Click To Start
-          </LinkButton>
         </CtaArticle>
+
+        <ContactForm />
       </CtaStyles>
     </SectionWrapper>
   );

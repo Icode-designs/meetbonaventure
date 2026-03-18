@@ -16,13 +16,20 @@ const LinkButton = ({
   children,
   variant,
   href,
+  onClick,
 }: {
   children: React.ReactNode;
   variant?: string;
   href: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }) => {
   return (
-    <LinkButtonStyles as={Link} href={href} $variant={variant}>
+    <LinkButtonStyles
+      as={Link}
+      href={href}
+      $variant={variant}
+      onClick={onClick}
+    >
       {children}
     </LinkButtonStyles>
   );
@@ -31,7 +38,7 @@ const LinkButton = ({
 export { LinkButton };
 export default Button;
 
-const ButtonStyles = styled.button<{ $variant?: string }>`
+export const ButtonStyles = styled.button<{ $variant?: string }>`
   background-color: ${(props) =>
     props.$variant === "primary" ? "var(--highlight)" : "transparent"};
   color: white;
@@ -44,6 +51,7 @@ const ButtonStyles = styled.button<{ $variant?: string }>`
   cursor: pointer;
   width: fit-content;
   transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
 
   &:hover {
     background-color: ${(props) =>

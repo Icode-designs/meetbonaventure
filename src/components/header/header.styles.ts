@@ -34,10 +34,10 @@ export const Menubtn = styled.button`
 
 export const NavStyles = styled.nav<{ $isOpen: boolean }>`
   position: absolute;
-  top: 88px;
+  top: 73px;
   right: ${({ $isOpen }) => ($isOpen ? "0" : "-100%")};
   width: 100%;
-  height: calc(100vh - 88px);
+  height: calc(100vh - 73px);
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: end;

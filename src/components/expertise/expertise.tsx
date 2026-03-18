@@ -58,7 +58,9 @@ const Expertise = () => {
               and scaling.
             </p>
           </article>
-          <a href="">Download Resume</a>
+          <a href="/Bonaventure Osakwe - frontend engineer CV.pdf" download>
+            Download Resume
+          </a>
         </ExpertiseHeaderBox>
         <ExpertiseGrid>
           {expertise.map((item, index) => (

@@ -11,7 +11,7 @@ import Logo from "../logo/logo";
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
-import Button, { LinkButton } from "../button/button";
+import { LinkButton } from "../button/button";
 import useMediaQuery from "@/hooks/useMediaquery";
 
 const Header = () => {
@@ -33,23 +33,37 @@ const Header = () => {
         <NavStyles $isOpen={isMenuOpen}>
           <ul>
             <li>
-              <Link href="#work">work</Link>
+              <Link href="#work" onClick={toggleMenu}>
+                work
+              </Link>
             </li>
             <li>
-              <Link href="#expertise">expertise</Link>
+              <Link href="#expertise" onClick={toggleMenu}>
+                expertise
+              </Link>
             </li>
             <li>
-              <Link href="#process">process</Link>
+              <Link href="#process" onClick={toggleMenu}>
+                process
+              </Link>
             </li>
             <li>
-              <Link href="/about">about</Link>
+              <Link href="/about" onClick={toggleMenu}>
+                about
+              </Link>
             </li>
             <li>
-              <Link href="/blog">blog</Link>
+              <Link href="/blog" onClick={toggleMenu}>
+                blog
+              </Link>
             </li>
             {!isDesktop && (
               <li>
-                <LinkButton href="/contact" variant="primary">
+                <LinkButton
+                  href="/contact"
+                  variant="primary"
+                  onClick={toggleMenu}
+                >
                   Get in touch
                 </LinkButton>
               </li>
@@ -57,7 +71,7 @@ const Header = () => {
           </ul>
         </NavStyles>
         {isDesktop && (
-          <LinkButton href="/contact" variant="primary">
+          <LinkButton href="/#contact" variant="primary">
             Get in touch
           </LinkButton>
         )}

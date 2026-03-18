@@ -1,7 +1,8 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-const StyledLogo = styled.p`
+const StyledLogo = styled(Link)`
   font-family: var(--font-italianno);
   font-size: clamp(32px, 3vw, 40px);
   color: var(--col-100);
@@ -9,7 +10,7 @@ const StyledLogo = styled.p`
 `;
 
 const Logo = () => {
-  return <StyledLogo>Meet Bonaventure</StyledLogo>;
+  return <StyledLogo href="/">Meet Bonaventure</StyledLogo>;
 };
 
 export default Logo;

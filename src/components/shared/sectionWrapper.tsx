@@ -15,7 +15,7 @@ const SectionWrapper = ({
       id={id}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.2 }} // 👈 important
+      viewport={{ once: false, amount: 0.3 }} // 👈 important
       variants={{
         hidden: {
           opacity: 0,

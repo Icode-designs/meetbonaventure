@@ -18,13 +18,13 @@ const Footer = () => {
         <ul>
           <h3>contact links</h3>
           <li>
-            <a href="">Linkedin</a>
+            <a href="https://www.linkedin.com/in/icode-designs/">Linkedin</a>
           </li>
           <li>
-            <a href="">whatsapp</a>
+            <a href="https://wa.me/2348133661252">whatsapp</a>
           </li>
           <li>
-            <a href="">X / Twitter</a>
+            <a href="https://x.com/Alexanderosakwe">X / Twitter</a>
           </li>
         </ul>
       </FooterContentBox>
