@@ -41,13 +41,13 @@ h1{
 
 h2{
     font-size: clamp(28px, 2vw, 32px);
-    font-family: var(--font-inter);
     text-transform: capitalize;
 }
 
 h3{
     font-size: clamp(20px, 1vw, 24px);
     text-transform: capitalize;
+    margin-bottom: 8px;
 }
 
 p{

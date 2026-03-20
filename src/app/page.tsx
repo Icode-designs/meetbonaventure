@@ -1,7 +1,7 @@
 import CaseStudies from "@/components/caseStudies/caseStudies";
 import Cta from "@/components/cta/cta";
 import Expertise from "@/components/expertise/expertise";
-import Hero from "@/components/hero/hero";
+import Hero from "@/components/homeHero/homeHero";
 import Process from "@/components/process/process";
 import TechStack from "@/components/stack/stack";
 

@@ -33,17 +33,17 @@ const Header = () => {
         <NavStyles $isOpen={isMenuOpen}>
           <ul>
             <li>
-              <Link href="#work" onClick={toggleMenu}>
+              <Link href="/#work" onClick={toggleMenu}>
                 work
               </Link>
             </li>
             <li>
-              <Link href="#expertise" onClick={toggleMenu}>
+              <Link href="/#expertise" onClick={toggleMenu}>
                 expertise
               </Link>
             </li>
             <li>
-              <Link href="#process" onClick={toggleMenu}>
+              <Link href="/#process" onClick={toggleMenu}>
                 process
               </Link>
             </li>
