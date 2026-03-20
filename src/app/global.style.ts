@@ -68,4 +68,8 @@ a{
     font-size: inherit;
     text-transform: capitalize;
 }
+
+section{
+    scroll-margin-top: 150px;
+}
 `;
