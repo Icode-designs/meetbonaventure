@@ -11,8 +11,13 @@ const Footer = () => {
     <FooterStyles>
       <FooterContentBox>
         <article>
-          <Logo />
-          <p>Full-Stack Developer and king julians mentor</p>
+          <Logo size="100px" />
+          <p>
+            Building digital experiences that don’t just look good, but work.
+            Every project is crafted with attention to detail, performance, and
+            user experience, because your online presence should do more than
+            exist, it should convert
+          </p>
         </article>
 
         <ul>

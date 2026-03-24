@@ -46,7 +46,6 @@ export const ProcessCard = styled.article`
   }
 
   &.active {
-    border-color: var(--highlight);
     span {
       background-color: var(--highlight);
       box-shadow: 0 6px 10px rgba(5, 122, 255, 0.5);

@@ -21,6 +21,7 @@ export const FooterContentBox = styled.div`
     gap: 16px;
     justify-items: center;
     max-width: 400px;
+    text-align: center;
   }
 
   ul {
@@ -44,10 +45,12 @@ export const FooterContentBox = styled.div`
     align-items: center;
 
     article {
-      display: grid;
+      display: flex;
       gap: 16px;
       justify-items: start;
       max-width: 400px;
+      text-align: left;
+      align-items: center;
     }
   }
 `;

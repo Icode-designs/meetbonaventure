@@ -4,20 +4,15 @@ import styled from "styled-components";
 import logo from "@/assets/logo white.png";
 import Image from "next/image";
 
-const StyledLogo = styled(Link)`
+const StyledLogo = styled(Link)<{ $size: string | undefined }>`
   font-family: var(--font-italianno);
-  height: 50px;
+  height: ${({ $size }) => $size || "50px"};
   width: auto;
   color: var(--col-100);
   text-transform: lowercase;
   display: flex;
   align-items: center;
   gap: 16px;
-
-  h3 {
-    text-transform: none;
-  }
-
   img {
     height: 100%;
     width: auto;
@@ -26,11 +21,11 @@ const StyledLogo = styled(Link)`
   }
 `;
 
-const Logo = () => {
+const Logo = ({ size }: { size?: string }) => {
   return (
-    <StyledLogo href="/">
-      <Image src={logo.src} alt="brand logo" height={300} width={300} />
-      <h3>Bonaventure da Dev</h3>
+    <StyledLogo href="/" $size={size}>
+      <Image src={logo.src} alt="brand logo" height={500} width={300} />
+      <div></div>
     </StyledLogo>
   );
 };

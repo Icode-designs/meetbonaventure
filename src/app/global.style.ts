@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 :root{
@@ -37,17 +37,20 @@ h1{
     letter-spacing: 15%;
     line-height: auto;
     text-transform: uppercase;
+    font-family: var(--font-inter);
 }
 
 h2{
     font-size: clamp(28px, 2vw, 32px);
     text-transform: capitalize;
+    font-family: var(--font-inter);
 }
 
 h3{
     font-size: clamp(20px, 1vw, 24px);
     text-transform: capitalize;
     margin-bottom: 8px;
+    font-family: var(--font-inter);
 }
 
 p{

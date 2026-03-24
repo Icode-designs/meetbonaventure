@@ -17,7 +17,7 @@ const Expertise = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % 3);
-    }, 5000); // runs every 2s
+    }, 10000); // runs every 2s
 
     return () => clearInterval(interval);
   }, []);
