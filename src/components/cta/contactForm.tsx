@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ContactFormStyles, FormBtn } from "./cta.styles";
+import { FormStyles, FormBtn } from "./cta.styles";
 import InputContainer from "./inputContainer";
 import emailjs from "@emailjs/browser";
 
@@ -75,7 +75,7 @@ const ContactForm = () => {
       );
   };
   return (
-    <ContactFormStyles onSubmit={sendMail}>
+    <FormStyles onSubmit={sendMail}>
       <div>
         <InputContainer name="firstName" label="first name" type="text" />
         <InputContainer name="lastName" label="last name" type="text" />
@@ -99,7 +99,7 @@ const ContactForm = () => {
       <FormBtn $variant="primary" disabled={isSending}>
         {!isSending ? "Submit your Message" : "sending"}
       </FormBtn>
-    </ContactFormStyles>
+    </FormStyles>
   );
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import {
   HeaderContainer,
@@ -17,12 +17,30 @@ import useMediaQuery from "@/hooks/useMediaquery";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 1024px)");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScrollState = () => {
+      const scrolled = window.scrollY > 100;
+
+      // prevent unnecessary re-renders
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
+    };
+
+    handleScrollState(); // run once on mount
+
+    window.addEventListener("scroll", handleScrollState, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollState);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
   return (
-    <HeaderStyles>
+    <HeaderStyles $isScrolled={isScrolled || isMenuOpen}>
       <HeaderContainer>
         <Logo />
 

@@ -31,7 +31,7 @@ export const CtaArticle = styled.article`
   }
 `;
 
-export const ContactFormStyles = styled.form`
+export const FormStyles = styled.form`
   width: 100%;
   height: fit-content;
   border-radius: 12px;

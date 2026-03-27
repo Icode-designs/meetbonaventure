@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@lottiefiles/lottie-player": "^2.0.12",
     "@lottiefiles/react-lottie-player": "^3.6.0",
+    "@supabase/supabase-js": "^2.100.1",
     "framer-motion": "^12.34.5",
     "lottie-react": "^2.4.1",
     "next": "16.1.6",

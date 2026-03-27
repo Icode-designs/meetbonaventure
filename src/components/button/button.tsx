@@ -5,11 +5,12 @@ import styled from "styled-components";
 const Button = ({
   children,
   variant,
+  ...rest
 }: {
   children: React.ReactNode;
   variant?: string;
-}) => {
-  return <ButtonStyles $variant={variant}>{children}</ButtonStyles>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+  return <ButtonStyles $variant={variant} {...rest}>{children}</ButtonStyles>;
 };
 
 const LinkButton = ({

@@ -61,4 +61,8 @@ export const FooterAccreditation = styled.div`
   padding: 20px 16px;
   padding-bottom: 0;
   text-align: center;
+  a {
+    color: var(--grey);
+    font-size: 14px;
+  }
 `;

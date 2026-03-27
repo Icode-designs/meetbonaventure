@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 
-export const HeaderStyles = styled.header`
+export const HeaderStyles = styled.header<{ $isScrolled: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,9 @@ export const HeaderStyles = styled.header`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background-color: var(--body-color);
+  background-color: ${({ $isScrolled }) =>
+    $isScrolled ? "var(--body-color)" : "transparent"};
+  transition: all ease-in-out 0.3s;
 `;
 
 export const HeaderContainer = styled.div`

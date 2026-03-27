@@ -5,6 +5,7 @@ import {
   FooterStyles,
 } from "./footer.styles";
 import Logo from "../logo/logo";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -34,7 +35,9 @@ const Footer = () => {
         </ul>
       </FooterContentBox>
       <FooterAccreditation>
-        <p>© 2023 Bonaventure Ifechukwu. All rights reserved.</p>
+        <Link href="/dashboard">
+          © 2023 Bonaventure Ifechukwu. All rights reserved.
+        </Link>
       </FooterAccreditation>
     </FooterStyles>
   );

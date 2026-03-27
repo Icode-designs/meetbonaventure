@@ -70,6 +70,11 @@ a{
     color: inherit;
     font-size: inherit;
     text-transform: capitalize;
+    transition: all ease-in-out 0.3s;
+
+    &:hover{
+        color: var(--highlight);
+    }
 }
 
 section{

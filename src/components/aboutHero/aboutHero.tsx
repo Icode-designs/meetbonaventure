@@ -1,7 +1,6 @@
 import React from "react";
 import {
   HeroArticle,
-  HeroIllustration,
   HeroStyles,
 } from "../homeHero/homeHero.styles";
 import { SpanText } from "../shared/shared.styles";
@@ -15,25 +14,26 @@ const AboutHero = () => {
     <HeroStyles>
       <HeroArticle>
         <h1>
-          Hi, my name is <SpanText> Bonaventure</SpanText>, I am a software
-          engineer.{" "}
+          Hi, my name is <SpanText> Bonaventure</SpanText>, and I am a Software
+          Engineer.{" "}
         </h1>
         <p>
           <SpanText>I build high-performance web applications</SpanText> and
           bespoke digital experiences for leading agencies and forward-thinking
-          international brands. To do this i leverage a number of skills both
-          technical and relational which i have picked up over the years.
+          brands worldwide. To achieve this, I leverage a versatile skill set—spanning both 
+          cutting-edge technical architectures and strong interpersonal collaboration.
         </p>
         <LinkButton href="/#contact" variant="primary">
-          contact me
+          Let's connect
         </LinkButton>
       </HeroArticle>
       <AboutHeroImgBox>
         <Image
           src={heroImg.src}
-          alt="image of bonaventure"
+          alt="Professional portrait of Bonaventure"
           width={400}
           height={500}
+          priority
         />
       </AboutHeroImgBox>
     </HeroStyles>
