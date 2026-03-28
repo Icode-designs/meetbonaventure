@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { supabase } from "@/utils/supabase";
+import { trackEvent } from "@/utils/analytics";
 
 /* ─── Layout ─────────────────────────────────────────── */
 const Page = styled.div`
@@ -115,6 +116,7 @@ export default function BlogDetailPage() {
       setLoading(false);
     };
     fetch();
+    trackEvent("profile_view", { page: `/blog/${id}` });
   }, [id]);
 
   if (loading) {

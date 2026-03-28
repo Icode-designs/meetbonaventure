@@ -10,6 +10,7 @@ import {
 } from "./expertise.styles";
 import { GoLightBulb, GoRocket } from "react-icons/go";
 import { MdOutlineTerminal } from "react-icons/md";
+import { trackEvent } from "@/utils/analytics";
 
 const Expertise = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -58,7 +59,7 @@ const Expertise = () => {
               and scaling.
             </p>
           </article>
-          <a href="/Bonaventure Osakwe - frontend engineer CV.pdf" download>
+          <a href="/Bonaventure Osakwe - frontend engineer CV.pdf" download onClick={() => trackEvent("resume_download")}>
             Download Resume
           </a>
         </ExpertiseHeaderBox>

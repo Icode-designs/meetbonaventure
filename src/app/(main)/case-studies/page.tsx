@@ -13,12 +13,14 @@ import {
   ProblemList
 } from "@/components/caseStudies/caseStudies.styles";
 import { supabase } from "@/utils/supabase";
+import { trackEvent } from "@/utils/analytics";
 
 export default function AllCaseStudiesPage() {
   const [studies, setStudies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    trackEvent("profile_view", { page: "/case-studies" });
     const fetchStudies = async () => {
       const { data } = await supabase
         .from("case_studies")
@@ -100,6 +102,7 @@ export default function AllCaseStudiesPage() {
                   </div>
                   <Link
                     href={`/case-studies/${study.id}`}
+                    onClick={() => trackEvent("case_study_click", { study_id: study.id, company: study.company })}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",

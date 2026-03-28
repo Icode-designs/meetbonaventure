@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FormStyles, FormBtn } from "./cta.styles";
 import InputContainer from "./inputContainer";
 import emailjs from "@emailjs/browser";
+import { trackEvent } from "@/utils/analytics";
 
 const ContactForm = () => {
   const [isSending, setIsSending] = useState(false);
@@ -63,6 +64,7 @@ const ContactForm = () => {
       )
       .then(
         () => {
+          trackEvent("contact_submission", { email });
           alert("Message sent successfully!");
           setIsSending(false);
           form.reset(); // optional: clear form
