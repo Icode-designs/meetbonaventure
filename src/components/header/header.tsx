@@ -78,7 +78,7 @@ const Header = () => {
             {!isDesktop && (
               <li>
                 <LinkButton
-                  href="/contact"
+                  href="/#contact"
                   variant="primary"
                   onClick={toggleMenu}
                 >
