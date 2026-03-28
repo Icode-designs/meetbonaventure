@@ -39,7 +39,7 @@ const Hero = () => {
             <LinkButton href="/#contact" variant="primary">
               Get in Touch
             </LinkButton>
-            <LinkButton href="/work" variant="secondary">
+            <LinkButton href="/#work" variant="secondary">
               View Work
             </LinkButton>
           </BtnFlexContainer>
